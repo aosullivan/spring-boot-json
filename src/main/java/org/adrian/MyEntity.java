@@ -1,13 +1,11 @@
-package sample.jersey1;
+package org.adrian;
 
 import java.util.Date;
 
-public class SomeData {
+public class MyEntity {
     
-    int id;
-    
-    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern =  "yyyy-MM-dd")
-    Date date;
+    private int id;
+    private Date date;
     
     public int getId() {
         return id;

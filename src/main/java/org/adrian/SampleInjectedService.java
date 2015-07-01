@@ -1,6 +1,6 @@
-package sample.jersey1;
+package org.adrian;
 
-public class Foo {
+public class SampleInjectedService {
 
     @Override
     public String toString() {

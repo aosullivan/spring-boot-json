@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package sample.jersey1;
+package org.adrian;
 
 import java.util.Date;
 
@@ -33,12 +33,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class RestResource {
     
-    private Foo foo;
+    private SampleInjectedService foo;
 
-    //curl --data '{ "id" :10, "date":"2014-12-14" }'  -H "Content-Type: application/json"  http://localhost:10092/test
+    //curl --data '{ "id" :10, "date":"2014-12-14" }'  -H "Content-Type: application/json"  http://localhost:10092/main/test3
 
     @Autowired
-    public RestResource(Foo foo) {
+    public RestResource(SampleInjectedService foo) {
         this.foo = foo;
     }
     
@@ -61,12 +61,12 @@ public class RestResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/test3")
-    public Response helloPost(SomeData somedata1) {
+    public Response helloPost(MyEntity somedata1) {
         return Response.status(200).entity(somedata1).build();
     }
 
-    private SomeData someData() {
-        final SomeData data = new SomeData();
+    private MyEntity someData() {
+        final MyEntity data = new MyEntity();
         data.setId(10);
         data.setDate(new Date());
         return data;
