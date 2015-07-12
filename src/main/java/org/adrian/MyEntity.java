@@ -19,5 +19,9 @@ public class MyEntity {
     public void setDate(final Date date) {
         this.date = date;
     }
+	@Override
+	public String toString() {
+		return "MyEntity [id=" + id + ", date=" + date + "]";
+	}
 
 }

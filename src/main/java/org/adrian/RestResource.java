@@ -63,6 +63,7 @@ public class RestResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/test3")
     public Response helloPost(MyEntity somedata1) {
+    	System.out.println(somedata1);
         return Response.status(200).entity(somedata1).build();
     }
 
