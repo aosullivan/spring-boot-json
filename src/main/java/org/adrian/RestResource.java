@@ -29,14 +29,15 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Path("/main")
 @Component
+@Path("/main")
 public class RestResource {
     
     private SampleInjectedService foo;
 
     //curl --data '{ "id" :10, "date":"2014-12-14" }'  -H "Content-Type: application/json"  http://localhost:10092/main/test3
-
+    //curl.exe, use "{ \"id\" :10, \"date\":\"2014-12-14\" }"
+    
     @Autowired
     public RestResource(SampleInjectedService foo) {
         this.foo = foo;
@@ -47,7 +48,7 @@ public class RestResource {
     public String hello() {
         return "Hello World";
     }
-    
+        
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
